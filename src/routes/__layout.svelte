@@ -7,6 +7,7 @@
 	<ul class="pb-8">
 		<li><a href="/">Home</a></li>
 		<li><a href="/another-page">Another</a></li>
+		<li><a href="/tennis-players">Tennis Players</a></li>
 	</ul>
 	<slot />
 </div>
