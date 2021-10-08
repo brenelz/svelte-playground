@@ -1,6 +1,6 @@
 <script context="module">
 	export const load = async ({ fetch }) => {
-		const result = await fetch('https://tennis-trivia.netlify.app/api/newGame');
+		const result = await fetch('players.json');
 		const { players } = await result.json();
 
 		return {
@@ -31,7 +31,7 @@
 	<title>Tennis Players</title>
 </svelte:head>
 
-<p>Tennis players</p>
+<p class="text-2xl underline">Tennis players</p>
 
 <form on:submit={addPlayer}>
 	<ul>
