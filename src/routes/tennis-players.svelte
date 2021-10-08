@@ -1,5 +1,4 @@
 <script context="module">
-	export const prerender = true;
 	export const load = async ({ fetch }) => {
 		const result = await fetch('https://tennis-trivia.netlify.app/api/newGame');
 		const { players } = await result.json();
