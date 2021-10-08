@@ -16,6 +16,15 @@
 		full_name: string;
 	};
 	export let players: Player[];
+
+	let listOfPlayers = players;
+	let name = '';
+
+	const addPlayer = (e) => {
+		e.preventDefault();
+		listOfPlayers = [...listOfPlayers, { full_name: name }];
+		name = '';
+	};
 </script>
 
 <svelte:head>
@@ -24,8 +33,19 @@
 
 <p>Tennis players</p>
 
-<ul>
-	{#each players as player}
-		<li>{player.full_name}</li>
-	{/each}
-</ul>
+<form on:submit={addPlayer}>
+	<ul>
+		{#each listOfPlayers as player}
+			<li>{player.full_name}</li>
+		{/each}
+		<li class="pt-4">
+			<input
+				class="p-2 py-3 rounded text-black"
+				placeholder="player name"
+				type="text"
+				bind:value={name}
+			/>
+			<button type="submit" class="btn btn-primary">Add Player</button>
+		</li>
+	</ul>
+</form>
