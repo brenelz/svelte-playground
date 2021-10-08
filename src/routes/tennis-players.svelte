@@ -12,7 +12,7 @@
 	};
 </script>
 
-<script lang="typescript">
+<script lang="ts">
 	type Player = {
 		full_name: string;
 	};
