@@ -1,3 +1,19 @@
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+	import { getBlogData } from '$lib/blog';
+
+	export const load: Load = async ({ page }) => {
+		const blogData = await getBlogData();
+		const blog = blogData.find((data) => data.id == parseInt(page.params.id));
+
+		return {
+			stuff: {
+				blog
+			}
+		};
+	};
+</script>
+
 <script>
 	import '../app.css';
 </script>

@@ -20,8 +20,7 @@
 	let listOfPlayers = players;
 	let name = '';
 
-	const addPlayer = (e) => {
-		e.preventDefault();
+	const addPlayer = () => {
 		listOfPlayers = [...listOfPlayers, { full_name: name }];
 		name = '';
 	};
@@ -33,7 +32,7 @@
 
 <p class="text-2xl underline">Tennis players</p>
 
-<form on:submit={addPlayer}>
+<form on:submit|preventDefault={addPlayer}>
 	<ul>
 		{#each listOfPlayers as player}
 			<li>{player.full_name}</li>
